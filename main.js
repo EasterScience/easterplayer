@@ -130,14 +130,16 @@ function playpauseTrack() {
   else pauseTrack();
 }
 
-function playTrack() {
-  curr_track.play();
+function playTrack() {  
+  //curr_track.play();
+  player.play()
   isPlaying = true;
   playpause_btn.innerHTML = '<i class="fa fa-pause-circle fa-5x"></i>';
 }
 
 function pauseTrack() {
-  curr_track.pause();
+  player.pause()
+  //curr_track.pause();
   isPlaying = false;
   playpause_btn.innerHTML = '<i class="fa fa-play-circle fa-5x"></i>';;
 }
@@ -190,4 +192,18 @@ function seekUpdate() {
   }
 }
 
+/* Flac Audio Player */
+//var playBtn = document.getElementById('play');
+//var pauseBtn = document.getElementById('pause');
+var s_url = 'https://upload.wikimedia.org/wikipedia/commons/5/5e/Debussy_-_Pour_les_accords.flac'
+
+var player = AV.Player.fromURL(s_url);
+
+// playBtn.addEventListener('click', function() {
+// 	player.play()
+// })
+
+// pauseBtn.addEventListener('click', function() {
+// 	player.pause()
+// })
 
